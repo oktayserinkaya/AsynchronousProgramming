@@ -50,6 +50,14 @@
 
 * BaseRepository sýnýfý içinde IBaseRepository den miras alarak interfaceleri implemente ettik
 
-* ICategoryRepository ve IProductRepository interfaceleri ekledik
+* ICategoryRepository ve IProductRepository interfaceleri ekledik (Services interface klasörüne)
 
-*
+* CategoryRepository ve ProductRepository class larý ekledik (Services concrete klasörüne)
+
+* WEB katmanýnda autofac klasörü ve içinde Autofac BusinessModule sýnýfý oluþturduk
+
+* Program.cs dosyasýnda AUTOFAC konfigürasyonu yaptýk
+
+* Web katmanýna autofac ve autofac.extensions.dependencyinjection paketlerini ekledik
+
+* Controller ve view ekleyerek deneme yaptýk
