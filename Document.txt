@@ -36,4 +36,20 @@
 
 * ProductSeedData dosyasýnda ImagePath özelliðini düzenleyerek tekrar migration yaptýk ve verileri kontrol eetik
 
+* DataAccess katmanýnda Services klasörü açtýk
+
+* Services içinde Concrete ve Interface klasörleri oluþturduk
+
+* Concrete içinde BaseRepository sýnýf ve Interface içinde IBaseRepository interface oluþturduk
+
+* IBaseRepository nin içini uygun þekilde düzenledik
+
+* Bunu yaparken DataAccess katmanýnda mesajlar için Utils klasörü oluþturduk
+
+* Utils içinde ServiceMessages sýnýfý oluþturarak verilecek service mesajlarýný düzenledik
+
+* BaseRepository sýnýfý içinde IBaseRepository den miras alarak interfaceleri implemente ettik
+
+* ICategoryRepository ve IProductRepository interfaceleri ekledik
+
 *
