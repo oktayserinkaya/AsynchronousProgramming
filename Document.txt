@@ -1,0 +1,39 @@
+* Core, DataAccess ve WEB katmanlarýný oluþturduk
+
+* Core katmanýnda Entities klasörü yaptýk
+
+* Entities içinde Abstract ve Concrete klasörleri oluþturduk
+
+* Abstract içinde BaseEntity oluþturduk
+
+* Concrete içinde Category ve Product sýnýflarýný oluþturduk ve annotations larýný ayarladýk
+
+* Product oluþtururken IFormFile Ctrl. yapýp install package dedik
+
+* IFormFile database e girmesin diye NotMapped dedik
+
+* DataAccess ve WEB katmanlarýna kurmamýz gereken paketleri kurduk
+
+* DataAccess ve WEB katmanlarýna proje referanslarýný ekledik
+
+* WEB katmanýný "Set As Startup Project" olarak belirledik
+
+* DataAccess katmanýna Context ve SeedData klasörlerini ekledik
+
+* SeedData içinde CategorySeedData ve ProductSeedData sýnýflarýný ekledik ve içlerini doldurduk
+
+* WEB katmanýnda wwwroot içinde ürün resimleri için "images" klasörü yaptýk ve resimleri içine koyduk
+
+* DataAccess katmanýnda AppDbContext oluþturarak database e gidecek tablolarý yazdýk
+
+* "appsettings.json" dosyasýna SQL baðlantýsý için connection string ekledik
+
+* "Program.cs" dosyasýndaki düzenlemeleri yaptýk (SQL Server Baðlantýsý için)
+
+* "Package Manager Console" da DataAccess katmanýný seçerek add-migration ve update-database iþlemlerini uyguladýk
+
+* "SQL Server Object Explorer" penceresinden oluþturduðumuz database ve veri alanlarýný kontrol ettik
+
+* ProductSeedData dosyasýnda ImagePath özelliðini düzenleyerek tekrar migration yaptýk ve verileri kontrol eetik
+
+*
