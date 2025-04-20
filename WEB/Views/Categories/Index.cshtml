@@ -1,5 +1,72 @@
 ﻿@{
 	ViewData["Title"] = "Index";
 }
+@model List<GetCategoryVM>
 
-<h1>Kategoriler</h1>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Kategoriler</h3>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped table-hover" id="myTable">
+						<thead>
+							<tr>
+								<th>Kategori</th>
+								<th>Durum</th>
+								<th>Eklenme Tarihi</th>
+								<th>Güncellenme Tarihi</th>
+								<th>Güncelle</th>
+								<th>Sil</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var category in Model)
+							{
+								<tr>
+									<td>@category.Name</td>
+									<td>@category.Status</td>
+									<td>@category.CreatedDate</td>
+									<td>@category.UpdatedDate</td>
+									<td>
+										<a asp-action="UpdateCategory" asp-route-id="@category.Id" class="btn btn-outline-success">Güncelle</a>
+									</td>
+									<td>
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-@category.Id">
+											Sil
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModal-@category.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h1 class="modal-title fs-5" id="exampleModalLabel">Silme Uyarısı</h1>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body text-start">
+														@category.Name Kategorisini Silmek İstediğinize Emin misiniz?
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">İptal</button>
+														<a asp-action="DeleteCategory" asp-route-id="@category.Id" class="btn btn-outline-danger">Sil</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="card-footer">
+				<a asp-action="CreateCategory" class="btn btn-outline-dark d-block">Yeni Kategori Ekle</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -37,7 +37,7 @@ namespace DataAccess.Services.Concrete
         public async Task<ServiceMessages> DeleteAsync(T entity)
         {
             entity.DeletedDate = DateTime.Now;
-            entity.Status = Status.Modified;
+            entity.Status = Status.Passive;
             _table.Update(entity);
 
             return await GetResultAsync();

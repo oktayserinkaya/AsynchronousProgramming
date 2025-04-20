@@ -61,3 +61,21 @@
 * Web katmanýna autofac ve autofac.extensions.dependencyinjection paketlerini ekledik
 
 * Controller ve view ekleyerek deneme yaptýk
+
+* WEB katmanýnda Models içinde CategoryViewModels klasörü açtýk ve GetCategoryVM class oluþturduk.
+
+* WEB katmanýna automapper paketi yükledik
+
+* WEB katmanýnda automapper klasörü açtýk
+
+* Automapper içinde CategoryMapping class oluþturduk.
+
+* web katmanýnda autofac kalsörü içinde AutofacBusinessModule class oluþturduk
+
+* _ViewImports içine using satýrý ekledik
+
+* Index.cshtml içini doldururken diðer taraftan _layout dosyasýnda gerekli düzenlemeleri yaptýk
+
+* site.css ve site.js dosyalarýný amaca uygun þekilde düzenledik
+
+* 
