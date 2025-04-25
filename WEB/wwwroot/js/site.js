@@ -4,6 +4,7 @@
 // Write your JavaScript code.
 
 let table = new DataTable('#myTable');
+let table = new DataTable('#myProductTable');
 
 $(".dt-length label").text("");
 $(".dt-info").text("");

@@ -1,0 +1,48 @@
+﻿@{
+	ViewData["Title"] = "Index";
+}
+@model List<GetProductVM>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Ürünler</h3>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped table-hover" id="myProductTable">
+						<thead>
+							<tr>
+								<th>Ürün</th>
+								<th>Kategori</th>
+								<th>Durum</th>
+								<th>Eklenme Tarihi</th>
+								<th>Güncellenme Tarihi</th>
+								<th>Bilgi</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var product in Model)
+							{
+								<tr>
+									<td>@product.Name</td>
+									<td>@product.Category</td>
+									<td>@product.Status</td>
+									<td>@product.CreatedDate</td>
+									<td>@product.UpdatedDate</td>
+									<td>
+										<a asp-action="GetInfoProduct" asp-route-id="@product.Id" class="btn btn-outline-dark"><i class="fa-solid fa-circle-info"></i></a>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="card-footer">
+				<a asp-action="CreateProduct" class="btn btn-outline-dark d-block">Yeni Ürün Ekle</a>
+			</div>
+		</div>
+	</div>
+</div>

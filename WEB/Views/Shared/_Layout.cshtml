@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/WEB.styles.css" asp-append-version="true" />
 	<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" />
+	<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+	<link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 	<header>
@@ -25,6 +27,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Kategoriler</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Ürünler</a>
 						</li>
 					</ul>
 				</div>
@@ -54,6 +59,8 @@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/lib/font-awesome/js/all.js"></script>
+	<script src="~/lib/font-awesome/js/all.min.js"></script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

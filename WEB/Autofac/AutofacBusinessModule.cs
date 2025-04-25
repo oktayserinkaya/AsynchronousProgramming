@@ -15,6 +15,7 @@ namespace WEB.Autofac
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new CategoryMapping());
+                mc.AddProfile(new ProductMapping());
             });
 
             IMapper mapper = mapperConfig.CreateMapper();
