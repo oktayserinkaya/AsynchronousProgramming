@@ -9,7 +9,9 @@ namespace WEB.Automapper
     {
         public CategoryMapping()
         {
-            CreateMap<GetCategoryVM, Category>().ReverseMap().ForMember(desc => desc.UpdatedDate, source => source.MapFrom(x => x.UpdatedDate.HasValue ? x.UpdatedDate.ToString() : " - ")).ForMember(desc => desc.Status, source => source.MapFrom(x => x.Status.GetDisplayName()));
+            CreateMap<GetCategoryVM, Category>().ReverseMap()
+                .ForMember(desc => desc.UpdatedDate, source => source.MapFrom(x => x.UpdatedDate.HasValue ? x.UpdatedDate.ToString() : " - "))
+                .ForMember(desc => desc.Status, source => source.MapFrom(x => x.Status.GetDisplayName()));
 
             CreateMap<CreateCategoryVM, Category>().ReverseMap();
             CreateMap<UpdateCategoryVM, Category>().ReverseMap();

@@ -9,5 +9,6 @@ namespace DataAccess.Services.Interface
 {
     public interface IProductRepository : IBaseRepository<Product>
     {
+        Task<Product?> GetProductByIdAsync(int id);
     }
 }

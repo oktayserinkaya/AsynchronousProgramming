@@ -34,5 +34,55 @@ namespace WEB.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+
+        public async Task<IActionResult> GetInfoProduct(int id)
+        {
+            try
+            {
+                var productExists = await _productRepo.AnyAsync(x => x.Id == id && x.Status != Status.Passive);
+                if (!productExists)
+                {
+                    TempData["Error"] = "Böyle bir ürün bulunmamaktadır!...";
+                    return RedirectToAction("Index");
+                }
+
+                var product = await _productRepo.GetByIdAsync(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            /* *-*-*-*-*-*-*-*-*-
+public async Task<IActionResult> GetInfoEmployee(int id)
+{
+    try
+    {
+        var employeeExists = await _employeeRepository.AnyAsync(x => x.Id == id && x.Status != Status.Passive);
+        if (!employeeExists)
+        {
+            TempData["Error"] = "Böyle bir çalışan bulunmamaktadır.";
+            return RedirectToAction("Index");
+        }
+
+        var employee = await _employeeRepository.GetEmployeeByIdAsync(id);
+        if (employee == null)
+        {
+            TempData["Error"] = "Çalışan bilgisi bulunamadı.";
+            return RedirectToAction("Index");
+        }
+
+        var model = _mapper.Map<GetEmployeeInfoVM>(employee);
+        return View(model);
+    }
+    catch (Exception ex)
+    {
+        TempData["Error"] = "İşlem sırasında bir hata oluştu.";
+        return RedirectToAction("Index");
+    }
+}
+             */
+        }
     }
 }
