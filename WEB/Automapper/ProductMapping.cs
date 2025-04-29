@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Entities.Concrete;
+using WEB.ExtensionMethods;
 using WEB.Models.ProductViewModels;
 
 namespace WEB.Automapper
@@ -20,7 +21,7 @@ namespace WEB.Automapper
             CreateMap<Product, CreateProductVM>().ReverseMap();
 
             CreateMap<Product, UpdateProductVM>().ReverseMap()
-                .ForMember(dest => dest.ImagePath, opt => opt.MapFrom(src => string.IsNullOrEmpty(src.ImageUrl) ? "default.jpg" : src.ImageUrl));
+                .ForMember(dest => dest.ImagePath, opt => opt.MapFrom(src => string.IsNullOrEmpty(src.ImagePath) ? "default.jpg" : src.ImagePath));
 
 
             CreateMap<Product, UpdateProductVM>().ReverseMap();
