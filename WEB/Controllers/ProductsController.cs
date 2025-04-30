@@ -39,50 +39,24 @@ namespace WEB.Controllers
         {
             try
             {
-                var productExists = await _productRepo.AnyAsync(x => x.Id == id && x.Status != Status.Passive);
-                if (!productExists)
+                var checkId = await _productRepo.AnyAsync(x => x.Id == id && x.Status != Status.Passive);
+                if (!checkId)
                 {
                     TempData["Error"] = "Böyle bir ürün bulunmamaktadır!...";
                     return RedirectToAction("Index");
                 }
 
                 var product = await _productRepo.GetByIdAsync(id);
+                var model = _mapper.Map<GetProductInfoVM>(product);
+                return View(model);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                TempData["Error"] = ex.Message;
+                return RedirectToAction("Index");
             }
-
-            /* *-*-*-*-*-*-*-*-*-
-public async Task<IActionResult> GetInfoEmployee(int id)
-{
-    try
-    {
-        var employeeExists = await _employeeRepository.AnyAsync(x => x.Id == id && x.Status != Status.Passive);
-        if (!employeeExists)
-        {
-            TempData["Error"] = "Böyle bir çalışan bulunmamaktadır.";
-            return RedirectToAction("Index");
         }
 
-        var employee = await _employeeRepository.GetEmployeeByIdAsync(id);
-        if (employee == null)
-        {
-            TempData["Error"] = "Çalışan bilgisi bulunamadı.";
-            return RedirectToAction("Index");
-        }
 
-        var model = _mapper.Map<GetEmployeeInfoVM>(employee);
-        return View(model);
-    }
-    catch (Exception ex)
-    {
-        TempData["Error"] = "İşlem sırasında bir hata oluştu.";
-        return RedirectToAction("Index");
-    }
-}
-             */
-        }
     }
 }
