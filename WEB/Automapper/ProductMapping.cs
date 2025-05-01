@@ -23,7 +23,6 @@ namespace WEB.Automapper
             CreateMap<Product, UpdateProductVM>().ReverseMap()
                 .ForMember(dest => dest.ImagePath, opt => opt.MapFrom(src => string.IsNullOrEmpty(src.ImagePath) ? "default.jpg" : src.ImagePath));
 
-
             CreateMap<Product, UpdateProductVM>().ReverseMap();
         }
     }
